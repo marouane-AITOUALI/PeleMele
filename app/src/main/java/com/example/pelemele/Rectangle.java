@@ -28,7 +28,8 @@ public class Rectangle extends View {
         paint.setAlpha(40);
     }
 
-    public void onDraw(Canvas canvas){
+    @Override
+    protected void onDraw(Canvas canvas){
         super.onDraw(canvas);
         canvas.drawRect(x1,y1,x2,y2,paint);
     }
