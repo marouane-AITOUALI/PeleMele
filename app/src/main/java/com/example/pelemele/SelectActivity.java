@@ -44,18 +44,19 @@ public class SelectActivity extends AppCompatActivity {
                      if(motionEvent.getActionIndex() == MotionEvent.ACTION_DOWN){
                          p1X = motionEvent.getX(0);
                          p1Y = motionEvent.getY(0);
-                         Point p1 = new Point((int) p1X, (int) p1Y);
                      }
                      else{
                          p2X = motionEvent.getX(1);
                          p2Y = motionEvent.getY(1);
-                         Point p2 = new Point((int) p2X, (int) p2Y);
-                     }
-                     paint.setColor(Color.RED);
-                     paint.setStrokeWidth(10);
-                     paint.setAlpha(40);
 
-                     canvas.drawRect(p1X,p1Y,p2X,p2Y,paint);
+                     }
+
+                     Rectangle rect = new Rectangle(getApplicationContext(),paint,canvas, p1X,p1Y,p2X,p2Y);
+                     layout.addView(rect);
+
+
+
+
 
 
 
